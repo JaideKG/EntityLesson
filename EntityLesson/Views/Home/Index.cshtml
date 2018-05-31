@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+@*I first display all the items in the viewbag*@
+<table>
+    <tr>
+        <th>Items</th>
+        <th>Users</th>
+        
+    </tr>
+    @for (int i = 0; i < ViewBag.Items.Count; i++)
+    {
+    <tr>
+        <td>@ViewBag.Items[i].Items</td>
+        <td>@ViewBag.Items[i].Users</td>
+    </tr>
+    }
+
+</table>
+
+@*These forms are used to do my different functions*@
+@*This first form is for adding a new item*@
+<form action="/Home/About">
+    <input type="text" name="Items" />
+    <input type="text" name="Users" />
+    <input type="submit" value="Add Item" />
+</form>
+@*This form is for removing an item by it ItemID*@
+<form action="/Home/Contact">
+    <input type="text" name="Items" />
+    <input type="submit" value="Remove Item" />
+</form>
+@*This form is for finding items for a specific user*@
+<form action="/Home/ItemView">
+    <input type="text" name="Users" />
+    <input type="submit" value="List Items" />
+</form>
